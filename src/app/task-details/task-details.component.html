@@ -1,0 +1,24 @@
+<section *ngIf="task">
+	<form (ngSubmit)="save()" #taskForm="ngForm">
+		<table>
+			<tr>
+				<th>Title</th>
+				<td><input type="text" name="tile" [(ngModel)]="task.title" required #name="ngModel"></td>
+			</tr>
+			<tr>
+				<th>Time Estimate</th>
+				<td><input type="number" name="time" [(ngModel)]="task.time" required #time="ngModel"></td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td><textarea name="description" [(ngModel)]="task.description" required #description="ngModel"></textarea></td>
+			</tr>
+			<tr>
+				<th>Due</th>
+				<td><input type="datetime-local" name="due" [(ngModel)]="task.due" required #due="ngModel"></td>
+			</tr>
+		</table>
+		<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+</section>
+<button class="btn btn-secondary" (click)="goToTaskList()">Back to tasks list</button>

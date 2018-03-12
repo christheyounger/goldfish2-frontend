@@ -1,0 +1,30 @@
+<h2>Tasks</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Task</th>
+			<th>Time Estimate</th>
+			<th>Due Date</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let task of tasks" [ngClass]="{'completed': task.completed}">
+			<td><input type="checkbox" [(ngModel)]="task.completed" (change)="update(task)"></td>
+			<th><a [routerLink]="['/tasks', task.id]">{{ task.title }}</a></th>
+			<td>{{ task.time }}</td>
+			<td>{{ task.due }}
+			<td><button (click)="delete(task)" class="btn btn-sm btn-danger">-</button></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type="text" class="form-control" name="title" [(ngModel)]="newTask.title" #name="ngModel"></td>
+			<td><input type="number" class="form-control" name="time" [(ngModel)]="newTask.time" #time="ngModel"></td>
+			<td><input type="datetime-local" name="due" [(ngModel)]="newTask.due"></td>
+			<td><button (click)="create(newTask)" class="btn btn-sm btn-primary">+</button></td>
+		</tr>
+	</tfoot>
+</table>
