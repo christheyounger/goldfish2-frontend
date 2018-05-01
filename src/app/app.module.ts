@@ -8,7 +8,7 @@ import { TasksService } from './tasks.service'
 import { TasksListComponent } from './tasks-list/tasks-list-component'
 import { TaskDetailsComponent } from './task-details/task-details.component'
 import { AppRoutingModule } from './app-routing.module'
-import { OAuthService } from 'angular2-oauth2/oauth-service'
+import { OAuthModule } from 'angular-oauth2-oidc'
 
 
 @NgModule({
@@ -20,11 +20,12 @@ import { OAuthService } from 'angular2-oauth2/oauth-service'
   ],
   imports: [
     BrowserModule,
+    OAuthModule,
     HttpModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [TasksService, OAuthService],
+  providers: [TasksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

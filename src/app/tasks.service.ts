@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
-import { OAuthService } from 'angular2-oauth2/oauth-service';
+import { OAuthService } from 'angular-oauth2-oidc';
 import { Observable } from 'rxjs/Observable';
 import { Task } from './task';
 import 'rxjs/add/operator/map';

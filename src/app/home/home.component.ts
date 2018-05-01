@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OAuthService } from 'angular2-oauth2/oauth-service';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
 	templateUrl: './home.component.html'
