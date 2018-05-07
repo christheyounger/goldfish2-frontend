@@ -21,6 +21,6 @@ export class HomeComponent {
 	getName() {
 		let claims = this.OAuthService.getIdentityClaims();
 		if (!claims) return null;
-		return claims.given_name;
+		return claims['given_name'];
 	}
 }
