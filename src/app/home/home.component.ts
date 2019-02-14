@@ -15,7 +15,13 @@ export class HomeComponent {
 	) { }
 
 	login() {
-		this.OAuthService.initImplicitFlow();
+		this.OAuthService.fetchTokenUsingPasswordFlow('chris', 'test').then((resp) => {
+        	this.name;
+      })
+	}
+
+	public get token() {
+		return this.OAuthService.getAccessToken();
 	}
 
 	public get name() {
