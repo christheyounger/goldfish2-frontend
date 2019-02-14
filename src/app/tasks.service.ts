@@ -30,7 +30,7 @@ export class TasksService {
 	save(task: Task): Observable<Response>{
 		let headers = this.getHeaders();
 		headers.append('Content-type', 'application/json');
-		return this.http.put(`${this.baseUrl}/${task.id}`, JSON.stringify(task), {headers});
+		return this.http.put(`${this.baseUrl}`, JSON.stringify(task), {headers});
 	}
 	delete(task: Task): Observable<Response>{
 		let headers = this.getHeaders();
