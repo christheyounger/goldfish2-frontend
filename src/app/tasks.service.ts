@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TasksService {
-	private baseUrl: string = 'http://localhost:8000/tasks';
+	private baseUrl: string = 'http://localhost:8000/api/tasks';
 	constructor(private http : Http, private oAuthService: OAuthService){
 	}
 	getAll(): Observable<Task[]>{
